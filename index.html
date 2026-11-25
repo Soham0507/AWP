@@ -956,7 +956,7 @@ function buildContent(){
   $('#gOf').innerHTML=`${CFG.groom.fp} <b>${CFG.groom.father}</b> व ${CFG.groom.mp} <b>${CFG.groom.mother}</b><br>यांचे सुपुत्र`;
   $('#bOf').innerHTML=`${CFG.bride.fp} <b>${CFG.bride.father}</b> व ${CFG.bride.mp} <b>${CFG.bride.mother}</b><br>यांची कन्या`;
   $$('[data-a]').forEach(el=>{const a=A[el.dataset.a];if(a&&a.url)el.src=a.url;});
-  $('#festCar').innerHTML=FEST.map(f=>`<article class="it fcard"><div class="blurme"><div class="sc"><img src="${A[f.scene].url}" alt=""></div><div class="ic ${f.cls}"><img src="${A[f.icon].url}" alt=""></div><div class="bd"><h3>${f.name}</h3><div class="r"><small>दिवस</small><span>${f.day}</span></div><div class="r"><small>वेळ</small><span>${f.time}</span></div><div class="r"><small>स्थळ</small><span>${f.place}</span></div></div><div class="dress"><span class="sw" style="--c:${f.swatch}"></span><span>पोशाख: ${f.dress}</span></div></div><div class="veil"></div></article>`).join('');
+  $('#festCar').innerHTML=FEST.map(f=>`<article class="it fcard"><div class="blurme"><div class="sc"><img src="${A[f.scene].url}" alt=""></div><div class="ic ${f.cls}"><img src="${A[f.icon].url}" alt=""></div><div class="bd"><h3>${f.name}</h3><div class="r"><small>दिवस</small><span>${f.day}</span></div><div class="r"><small>वेळ</small><span>${f.time}</span></div><div class="r"><small>स्थळ</small><span>${f.place}</span></div></div></div><div class="veil"></div></article>`).join('');
   $('#storyCar').innerHTML=PHOTOS.map((s,i)=>`<figure class="it ph"><img src="${s}" alt="" draggable="false"><p>${CAPS[i]||''}</p><div class="veil"></div></figure>`).join('');
   Carousel($('#festCar'),$('#festDots'),FEST.length,{spacing:170});
   Carousel($('#storyCar'),$('#storyDots'),PHOTOS.length,{spacing:165});
