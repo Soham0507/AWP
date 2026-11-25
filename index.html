@@ -360,7 +360,7 @@ body.ready .rz .bl{animation:bloom 1.8s cubic-bezier(.2,.9,.3,1.15) forwards;ani
             <div class="p3">गुरुवार</div>
             <div class="p2">४</div>
             <div class="p3">मार्च २०२७</div>
-            <div class="p4">सायंकाळी ४:३० वा. · फेरे</div>
+            <div class="p4">सायंकाळी ४:०५ वा. · फेरे</div>
           </div>
         </div>
         <div class="rollp" id="rollp">
@@ -413,7 +413,7 @@ body.ready .rz .bl{animation:bloom 1.8s cubic-bezier(.2,.9,.3,1.15) forwards;ani
       <h2>शुभविवाह</h2>
       <img class="dv" data-a="ornG" alt="">
       <div class="gl">गुरुवार, ४ मार्च २०२७</div>
-      <div class="gm">सायंकाळी ४:३० वाजता फेरे</div>
+      <div class="gm">सायंकाळी ४:०५ वाजता फेरे</div>
       <img class="dv" data-a="ornG" alt="">
       <div class="gm">फुलाई माता मंदिराच्या मागे,<br>सासवणे</div>
       <div class="gq">आपल्या उपस्थितीने आमचा आनंद द्विगुणित होईल.</div>
@@ -673,9 +673,9 @@ function raster(svg,W,H,dispW){
 
 /* ================= CONFIG (edit these) ================= */
 const CFG={
-  groom:{mr:'प्रितेश कवळे',fp:'श्री.',father:'[वडिलांचे नाव]',mp:'सौ.',mother:'[आईचे नाव]'},
-  bride:{mr:'असावरी म्हात्रे',fp:'कै.',father:'संदीप म्हात्रे',mp:'श्रीमती',mother:'जयमाला म्हात्रे'},
-  date:'2027-03-04T16:30:00+05:30',
+  groom:{mr:'प्रितेश कवळे',fp:'श्री.',father:'राजन सुंदर कवळे',mp:'सौ.',mother:'ज्योती राजन कवळे'},
+  bride:{mr:'असावरी म्हात्रे',fp:'कै.',father:'संदीप शंकर म्हात्रे',mp:'श्रीमती',mother:'जयमाला संदीप म्हात्रे'},
+  date:'2027-03-04T16:05:00+05:30',
   map:'https://maps.app.goo.gl/yjswACBfW9Zfa5nE7',
   address:'फुलाई माता मंदिराच्या मागे, सासवणे',
   music:'music/song.mp3' /* relative path; button stays hidden if the file is missing */
@@ -683,9 +683,9 @@ const CFG={
 const PLACE='फुलाई माता मंदिराच्या मागे, सासवणे';
 const TBA='लवकरच कळवण्यात येईल';
 const FEST=[
-  {key:'sakhar',name:'साखरपुडा',day:'मंगळवार, २ मार्च २०२७',time:TBA,place:PLACE,swatch:'#f2b8c2',dress:'पारंपरिक · पेस्टल रंग',cls:'i-ring',scene:'sceneSakhar',icon:'icoRing'},
-  {key:'haldi',name:'हळद',day:'बुधवार, ३ मार्च २०२७',time:TBA,place:'निवासस्थानी (घरी)',swatch:'#f4b400',dress:'पिवळा · हळदी रंग',cls:'i-mari',scene:'sceneHaldi',icon:'icoMari'},
-  {key:'lagn',name:'लग्न',day:'गुरुवार, ४ मार्च २०२७',time:'सायंकाळी ४:३० वा. (फेरे)',place:PLACE,swatch:'#6e1f2f',dress:'पारंपरिक · मरून व सोनेरी',cls:'i-flame',scene:'sceneLagn',icon:'icoFlame'}
+  {key:'sakhar',name:'साखरपुडा',day:'मंगळवार, २ मार्च २०२७',time:'दुपारी ३:३० वा.',place:PLACE,swatch:'#f2b8c2',dress:'पारंपरिक · पेस्टल रंग',cls:'i-ring',scene:'sceneSakhar',icon:'icoRing'},
+  {key:'haldi',name:'हळद',day:'बुधवार, ३ मार्च २०२७',time:'सकाळी ९:०० पासून',place:'निवासस्थानी (घरी)',swatch:'#f4b400',dress:'पिवळा · हळदी रंग',cls:'i-mari',scene:'sceneHaldi',icon:'icoMari'},
+  {key:'lagn',name:'लग्न',day:'गुरुवार, ४ मार्च २०२७',time:'सायंकाळी ४:०५ वा. (फेरे)',place:PLACE,swatch:'#6e1f2f',dress:'पारंपरिक · मरून व सोनेरी',cls:'i-flame',scene:'sceneLagn',icon:'icoFlame'}
 ];
 const CAPS=['आशीर्वादांची सुरुवात','विश्वासाचे पहिले वचन','गोडव्याचा क्षण','तुझ्या सोबत मन फुलतं','सोनेरी संध्याकाळ','नजरेतच सारं काही','सागरकिनारी, आपली वाट','हातात हात, आयुष्यभर','दोन मने, एक प्रवास','हसू तुझं, आनंद माझा','श्वासातला विश्वास','तिचं हसू, आमचं सुख','सुंदर क्षणांची साथ','पुढच्या वाटेवर, एकत्र','साथसोबतीचा प्रवास','घरातला हक्काचा क्षण'];
 const PHOTOS=["photos/p01.jpeg", "photos/p02.jpeg", "photos/p03.jpeg", "photos/p04.jpeg", "photos/p05.jpeg", "photos/p06.jpeg", "photos/p07.jpeg", "photos/p08.jpeg", "photos/p09.jpeg", "photos/p10.jpeg", "photos/p11.jpeg", "photos/p12.jpeg", "photos/p13.jpeg", "photos/p14.jpeg", "photos/p15.jpeg", "photos/p16.jpeg"];
@@ -927,7 +927,7 @@ function initDate(){
   upd();
   new IntersectionObserver(es=>{vis=es[0].isIntersecting;},{threshold:.1}).observe($('#date'));
   setInterval(()=>{if(vis&&!document.hidden)upd();},1000);
-  const title='असावरी & प्रितेश – शुभविवाह',loc=CFG.address,det='आपल्या उपस्थितीची नम्र विनंती. फेरे सायंकाळी ४:३० वा.';
+  const title='असावरी & प्रितेश – शुभविवाह',loc=CFG.address,det='आपल्या उपस्थितीची नम्र विनंती. फेरे सायंकाळी ४:०५ वा.';
   $('#calBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(title)+'&dates=20270304T110000Z/20270304T130000Z&details='+encodeURIComponent(det)+'&location='+encodeURIComponent(loc)+'&ctz=Asia/Kolkata';
 }
 
