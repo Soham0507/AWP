@@ -71,6 +71,10 @@ body.ready .rz .bl{animation:bloom 1.8s cubic-bezier(.2,.9,.3,1.15) forwards;ani
 .reveal{opacity:0;transform:translate3d(0,16px,0);filter:blur(7px);transition:opacity .95s ease var(--d,0s),transform .95s ease var(--d,0s),filter .95s ease var(--d,0s)}
 .reveal.show{opacity:1;transform:none;filter:none}
 .rvs{opacity:0;transform:translate3d(0,22px,0);transition:opacity .9s ease var(--d,0s),transform .9s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+.rvs.tilt{transform:translate3d(0,22px,0) rotate(-3.5deg)}
+.med.hero-el,.pg,.eg{cursor:pointer}
+@keyframes gbump{0%{transform:scale(1)}35%{transform:scale(1.16)}100%{transform:scale(1)}}
+.gbump{animation:gbump .45s cubic-bezier(.3,1.5,.5,1)}
 .rvs.show{opacity:1;transform:none}
 
 .sh{text-align:center;margin-bottom:26px}
@@ -387,14 +391,14 @@ body.ready .rz .bl{animation:bloom 1.8s cubic-bezier(.2,.9,.3,1.15) forwards;ani
   <!-- 4. FESTIVITIES -->
   <section id="fest" class="sec">
     <header class="sh reveal"><img class="orn" data-a="orn" alt=""><div class="kick" style="letter-spacing:.06em;font-family:var(--mr);font-size:13px">॥ शुभ कार्यक्रम ॥</div><h2 class="h2">आनंदोत्सवाचे क्षण</h2><p class="sub">कार्ड सरकवून सर्व कार्यक्रम पाहा</p></header>
-    <div class="car rvs" id="festCar"></div>
+    <div class="car rvs tilt" id="festCar"></div>
     <div class="dots" id="festDots"></div>
   </section>
 
   <!-- 5. OUR STORY -->
   <section id="story" class="sec">
     <header class="sh reveal"><img class="orn" data-a="orn" alt=""><div class="kick" style="letter-spacing:.06em;font-family:var(--mr);font-size:13px">॥ आमची गोष्ट ॥</div><h2 class="h2">आठवणींचे क्षण</h2></header>
-    <div class="car rvs" id="storyCar"></div>
+    <div class="car rvs tilt" id="storyCar"></div>
     <div class="dots" id="storyDots"></div>
   </section>
 
@@ -951,6 +955,17 @@ function initObservers(){
   $$('.sec').forEach(s=>sc.observe(s));
 }
 
+/* ================= tap-to-bless: Ganesh medallion burst ================= */
+function initGaneshTap(){
+  document.addEventListener('click',e=>{
+    const el=e.target.closest('.med.hero-el,.pg,.eg');
+    if(!el)return;
+    burst(e.clientX,e.clientY);
+    el.classList.remove('gbump');void el.offsetWidth;el.classList.add('gbump');
+    try{navigator.vibrate&&navigator.vibrate(20);}catch(_){}
+  });
+}
+
 /* ================= build content ================= */
 function buildContent(){
   $('#heroBg').src=HERO_BG;
@@ -996,7 +1011,7 @@ async function boot(){
   await Promise.all([fonts,buildAssets(),imgs,musicReady(),sleep(500)]);
   /* petal canvases: keep decoded canvas as drawable */
   ['petal0','petal1','petal2'].forEach(k=>{if(!A[k].img){const im=new Image();im.src=A[k].url;A[k].img=im;}});
-  buildContent();initDecor();initPull();initDate();initLoc();initObservers();initIntro();
+  buildContent();initDecor();initPull();initDate();initLoc();initObservers();initIntro();initGaneshTap();
   await Promise.all($$('img[data-a]').map(i=>i.decode?i.decode().catch(()=>{}):0));
   $('#loader').classList.add('off');
   $('#intro').dataset.ready='1';$('#tapHint').classList.add('show');
